@@ -16,8 +16,8 @@ export class AppComponent {
     { text: 'Update a User', link: 'not yet implemented' }
   ];
   productsMenu: MenuItem[] = [
-    { text: 'List all Products', link: 'not yet implemented' },
-    { text: 'Insert a Product', link: 'not yet implemented' },
+    { text: 'List all Products', link: 'products/list' },
+    { text: 'Insert a Product', link: 'products/insert' },
     { text: 'Delete a Product', link: 'not yet implemented' },
     { text: 'Update a Product', link: 'not yet implemented' }
   ];

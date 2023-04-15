@@ -4,9 +4,9 @@ import { RouterModule, Routes } from '@angular/router';
 import { ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 
-import { UsersListComponent } from './users-list/users-list.component';
-
 import { UserService } from './user.service';
+
+import { UsersListComponent } from './users-list/users-list.component';
 import { UserInsertComponent } from './user-insert/user-insert.component';
 
 
