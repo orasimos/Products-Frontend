@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { UserService } from '../user.service';
-import { User } from '../user.interfaces';
+import { User } from 'shared';
 
 @Component({
   selector: 'app-user-update',
