@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
-import { UiComponent } from './ui.component';
-import { DropdownComponent } from './dropdown/dropdown.component';
+import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
 
-
+import { UiComponent } from './ui.component';
+import { DropdownComponent } from './dropdown/dropdown.component';
 
 @NgModule({
   declarations: [
@@ -11,10 +11,12 @@ import { RouterModule } from '@angular/router';
     DropdownComponent
   ],
   imports: [
-    RouterModule
+    RouterModule,
+    BrowserModule
   ],
   exports: [
-    UiComponent
+    UiComponent,
+    DropdownComponent
   ]
 })
 export class UiModule { }
