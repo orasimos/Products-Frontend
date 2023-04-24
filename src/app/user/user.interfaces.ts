@@ -22,3 +22,8 @@ export interface UserAPIList {
   status: boolean;
   data: User[];
 }
+
+export interface UserAPIOne {
+  status: boolean;
+  data: User;
+}

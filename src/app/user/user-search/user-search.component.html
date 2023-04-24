@@ -1,0 +1,54 @@
+<h2>Search User Form</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="username" class="form-label"></label>
+        <input 
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="username"
+        />
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!form.valid">Submit</button>
+    </div>
+</form>
+
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Loading User...
+    <div class="spinner-border text-primary">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf="user.name">
+    <table class="table table-striped">
+        <thead>
+            <th scope="col">Username</th>
+            <th scope="col">Password</th>
+            <th scope="col">Firstname</th>
+            <th scope="col">Lastname</th>
+            <th scope="col">Email</th>
+            <th scope="col">Address</th>
+            <th scope="col">Phone</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>{{ user.username }}</td>
+                <td>{{ user.password }}</td>
+                <td>{{ user.name }}</td>
+                <td>{{ user.surname}}</td>
+                <td>{{ user.email }}</td>
+                <td>
+                    {{ user.address.area }}
+                    {{ user.address.road }}
+                </td>
+                <td>
+                    <div *ngFor="let phone of user.phone">
+                        <strong>{{ phone.type }}</strong>
+                        <br>
+                        {{ phone.number }}
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+</div>

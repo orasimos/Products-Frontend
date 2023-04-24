@@ -1,7 +1,7 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { User, UserAPIList } from './user.interfaces';
+import { User, UserAPIList, UserAPIOne } from './user.interfaces';
 
 import { delay } from 'rxjs';
 
@@ -18,5 +18,17 @@ export class UserService {
 
   insertUser(user: User) {
     return this.http.post<UserAPIList>(`${USER_API}/create`, user);
+  }
+
+  searchUser(username: string) {
+    return this.http.get<UserAPIOne>(`${USER_API}/findone/${username}`).pipe(delay(1000));
+  }
+
+  updateUser(user: User) {
+    return this.http.patch<User>(`${USER_API}/update`, user);
+  }
+
+  deleteUser(username: string) {
+    return this.http.delete<UserAPIList>(`${USER_API}/delete/${username}`);
   }
 }

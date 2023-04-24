@@ -1,0 +1,22 @@
+<h2>Delete User</h2>
+<form [formGroup]="form" (ngSubmit)="onSubmit()">
+    <div class="mb-3">
+        <label for="username" class="form-label"></label>
+        <input 
+            type="text"
+            class="form-control"
+            id="username"
+            formControlName="username"
+        >
+        <button type="submit" class="btn btn-danger mt-2">Delete</button>
+    </div>
+</form>
+
+<div *ngIf="loading" class="mt-2 row alert alert-info">
+    Deleting User...
+    <div class="spinner-border text-primary">
+        <span class="sr-only"></span>
+    </div>
+</div>
+
+<div *ngIf="deleted" class="mt-2 row alert alert-info">User: {{ username }} deleted successfully</div>
