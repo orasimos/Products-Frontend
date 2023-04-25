@@ -11,6 +11,7 @@ import { UserInsertComponent } from './user-insert/user-insert.component';
 import { UserSearchComponent } from './user-search/user-search.component';
 import { UserUpdateComponent } from './user-update/user-update.component';
 import { UserDeleteComponent } from './user-delete/user-delete.component';
+import { WelcomeComponent } from './welcome/welcome.component';
 
 
 const routes: Routes = [
@@ -18,7 +19,8 @@ const routes: Routes = [
   { path: 'insert', component: UserInsertComponent },
   { path: 'search', component: UserSearchComponent },
   { path: 'update', component: UserUpdateComponent},
-  { path: 'delete', component: UserDeleteComponent }
+  { path: 'delete', component: UserDeleteComponent },
+  { path: '', component: WelcomeComponent}
 ];
  
 @NgModule({
@@ -27,7 +29,8 @@ const routes: Routes = [
     UserInsertComponent,
     UserSearchComponent,
     UserUpdateComponent,
-    UserDeleteComponent
+    UserDeleteComponent,
+    WelcomeComponent
   ],
   imports: [
     CommonModule,
