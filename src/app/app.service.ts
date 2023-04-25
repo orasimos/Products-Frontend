@@ -14,6 +14,9 @@ const USER_API = 'https://codingfactory.ddns.net/api/user';
 })
 export class AppService {
 
+  private isLoadingSubject = new BehaviorSubject<boolean>(false);
+  isLoading$ = this.isLoadingSubject.asObservable();
+
   private loggedInSubject = new BehaviorSubject<boolean>(false);
   isLoggedIn$ = this.loggedInSubject.asObservable();
 
@@ -23,6 +26,7 @@ export class AppService {
   constructor(private http: HttpClient, private alertService: UiService, private router: Router) {}
 
   login(username:string, password:string){
+    this.setIsLoading(true)
     this.http.get<UserAPIOne>(`${USER_API}/findone/${username}`)
       .subscribe((user) => {
         if (user.data && user.data.password === password) {
@@ -40,7 +44,8 @@ export class AppService {
             heading: 'Authentication Error', 
             text: 'wrong username or password'
           });
-        }   
+        }
+        this.setIsLoading(false);
       });
   }
 
@@ -48,5 +53,14 @@ export class AppService {
     this.loggedInSubject.next(false);
     this.loggedInUserFullnameSubject.next('');
     this.router.navigate(['']);
+    this.alertService.newAlert({
+      type: 'info',
+      heading: `Goodbye ${this.loggedInUserFullnameSubject.value}!`,
+      text: 'See you again soon!'
+    })
+  }
+  
+  setIsLoading(isLoading: boolean) {
+    this.isLoadingSubject.next(isLoading);
   }
 }
