@@ -92,6 +92,7 @@ export class UserUpdateComponent {
         }
       });
     }
+
     // this.search_form.reset();
   }
 }
