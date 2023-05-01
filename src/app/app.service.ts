@@ -3,8 +3,10 @@ import { HttpClient } from '@angular/common/http';
 
 import { BehaviorSubject } from 'rxjs';
 
-import { User, UserAPIOne } from 'shared';
-import { UiService } from 'ui';
+// import { User, UserAPIOne } from 'shared';
+import { User, UserAPIOne } from 'projects/shared/src/public-api';
+// import { UiService } from 'ui';
+import { UiService } from 'projects/ui/src/public-api';
 import { Router } from '@angular/router';
 
 const USER_API = 'https://codingfactory.ddns.net/api/user';

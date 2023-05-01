@@ -4,9 +4,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { HttpClientModule } from '@angular/common/http';
 
 // import custom modules
-import { SharedModule } from 'shared';
-import { UiModule } from 'ui';
-
+import { SharedModule } from 'projects/shared/src/public-api';
+import { UiModule } from 'projects/ui/src/public-api';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { DropdownComponent } from './dropdown/dropdown.component';

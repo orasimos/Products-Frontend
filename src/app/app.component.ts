@@ -1,7 +1,8 @@
 import { Component } from '@angular/core';
-import { usersMenu, productsMenu } from 'shared';
+// import { usersMenu, productsMenu } from 'shared';
+import { usersMenu, productsMenu } from 'projects/shared/src/public-api';
 import { AppService } from './app.service';
-import { UiService } from 'ui';
+import { UiService } from 'projects/ui/src/public-api';
 
 @Component({
   selector: 'app-root',

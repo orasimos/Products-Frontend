@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UserService } from '../user.service';
-import { User, UserAPIList } from 'shared';
+// import { User, UserAPIList } from 'shared';
+import { User, UserAPIList } from 'projects/shared/src/public-api';
 import { Subscription } from 'rxjs';
 import { orderBy } from 'lodash-es';
 import { AppService } from 'src/app/app.service';

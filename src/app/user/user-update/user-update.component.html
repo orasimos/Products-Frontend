@@ -1,5 +1,22 @@
 <h2>User Update Form</h2>
-<form [formGroup]="form" (ngSubmit)="onSubmit()">
+
+<div>
+  <form [formGroup]="search_form" (ngSubmit)="onSearch()">
+    <div class="mb-3">
+        <label for="username" class="form-label"></label>
+        <input 
+            type="text"
+            class="form-control border-primary"
+            id="username"
+            formControlName="username"
+            placeholder="Search user to update"
+        />
+        <button type="submit" class="btn btn-primary mt-2" [disabled]="!search_form.valid">Search</button>
+    </div>
+  </form>
+</div>
+
+<form [formGroup]="update_form" (ngSubmit)="onSubmit()">
   <div class="mb-3">
     <label for="username" class="form-label">Username</label>
     <input
@@ -110,7 +127,7 @@
     </button>
   </div>
 
-  <button type="submit" class="btn btn-success" [disabled]="!form.valid">
+  <button type="submit" class="btn btn-success" [disabled]="!update_form.valid">
     Submit
   </button>
 </form>

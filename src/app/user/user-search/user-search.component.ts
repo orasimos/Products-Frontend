@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { UserService } from '../user.service';
-import { User, UserAPIList, UserAPIOne } from 'shared';
+// import { User, UserAPIList, UserAPIOne } from 'shared';
+import { User, UserAPIOne } from 'projects/shared/src/public-api';
 import { Subscription } from 'rxjs';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 

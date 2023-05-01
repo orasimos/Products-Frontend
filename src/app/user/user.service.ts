@@ -1,7 +1,8 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 
-import { User, UserAPIList, UserAPIOne } from 'shared';
+// import { User, UserAPIList, UserAPIOne } from 'shared';
+import { User, UserAPIList, UserAPIOne } from 'projects/shared/src/public-api';
 
 import { delay } from 'rxjs';
 
