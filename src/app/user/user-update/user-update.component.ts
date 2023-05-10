@@ -81,6 +81,15 @@ export class UserUpdateComponent {
           const {status, data} = apiData;
           this.user = data;
           console.log(status, data);
+          this.update_form.patchValue({
+            username: this.user.username,
+            password: this.user.password,
+            name: this.user.name,
+            surname: this.user.surname,
+            email: this.user.email,
+            address: this.user.address,
+            phone: this.user.phone
+          })
         },
         error: (error) => {
           this.loading = false;

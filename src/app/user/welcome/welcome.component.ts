@@ -7,8 +7,8 @@ import { AppService } from 'src/app/app.service';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent {
-
-  fullname$ = this.service.loggedInUserFullname$
   
   constructor(private service: AppService) {}
+  
+  fullname$ = this.service.loggedInUserFullname$
 }

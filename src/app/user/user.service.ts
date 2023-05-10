@@ -18,7 +18,7 @@ export class UserService {
   }
 
   insertUser(user: User) {
-    return this.http.post<UserAPIList>(`${USER_API}/create`, user);
+    return this.http.post<UserAPIList>(`${USER_API}/create`, user).pipe(delay(1000));
   }
 
   searchUser(username: string) {
@@ -26,10 +26,10 @@ export class UserService {
   }
 
   updateUser(user: User) {
-    return this.http.patch<User>(`${USER_API}/update`, user);
+    return this.http.patch<User>(`${USER_API}/update`, user).pipe(delay(1000));
   }
 
   deleteUser(username: string) {
-    return this.http.delete<UserAPIList>(`${USER_API}/delete/${username}`);
+    return this.http.delete<UserAPIList>(`${USER_API}/delete/${username}`).pipe(delay(1000));
   }
 }
